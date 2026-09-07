@@ -1,4 +1,4 @@
-Absolutely. If you're learning **Pygame from scratch**, these are the main commands/functions you should learn, in roughly the right order.
+#This is just Pygame CMD and the way to learn
 
 ## 1. Install Pygame
 
