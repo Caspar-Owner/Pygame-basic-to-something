@@ -1,0 +1,59 @@
+import pygame
+
+
+# Display rules
+x = 1500
+y = 950
+
+
+
+pygame.init()
+
+screen = pygame.display.set_mode((x, y))
+screen.fill((0, 0, 0))
+
+clock = pygame.time.Clock()
+
+#Image location
+loc_x = x/2
+loc_y = y/2
+
+pygame.draw.circle(screen, (0, 255, 0), (loc_x, loc_y), 50)
+
+# screen.blit(image, (loc_x, loc_y))
+
+keys = pygame.key.get_pressed()
+
+pygame.display.update()
+
+running  = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        # For holding down keys
+        keys = pygame.key.get_pressed()
+
+    if keys[pygame.K_w]:
+        loc_y -= 10
+    if keys[pygame.K_s]:
+        loc_y += 10
+    if keys[pygame.K_a]:
+        loc_x -= 10
+    if keys[pygame.K_d]:
+        loc_x += 10
+
+    # if pygame.mouse.get_pressed():
+    #     mouse_x, mouse_y = pygame.mouse.get_pos()
+    #     loc_x = mouse_x - image.get_width()/2
+    #     loc_y = mouse_y - image.get_height()/2
+
+    # Redraw screen
+    screen.fill((0, 0, 0))
+    pygame.draw.circle(screen, (0, 255, 0), (loc_x, loc_y), 50)
+    pygame.display.flip()
+
+    clock.tick(60)
+
+
+pygame.quit()
