@@ -1,4 +1,4 @@
-#This is just Pygame CMD and the way to learn
+```This is just Pygame CMD and the way to learn```
 
 ## 1. Install Pygame
 
